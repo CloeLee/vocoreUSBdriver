@@ -183,7 +183,7 @@ int main(void)
         
 	printf("\nidVendor: %d", desc.idVendor);
 	printf("\nidProduct: %d", desc.idProduct);
-        if(desc.idVendor == 0xffff && desc.idProduct == 0x4)
+        if(desc.idVendor == 7531 && desc.idProduct == 4)
         {
             found = 1;
             break;
