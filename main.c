@@ -16,8 +16,8 @@
 // #include </usr/include/libusb-1.0/libusb.h>
 
 // need to change after getting 'bEndpointAddress' value
-#define BULK_EP_OUT     0x02
-#define BULK_EP_IN      0x88
+#define BULK_EP_OUT     0x00
+#define BULK_EP_IN      0x80
 
 int interface_ref = 0;
 int alt_interface,interface_number;
@@ -181,8 +181,6 @@ int main(void)
         printf("\nProduct : %s",str2);
         printf("\n----------------------------------------");
         
-	printf("\nidVendor: %d", desc.idVendor);
-	printf("\nidProduct: %d", desc.idProduct);
         if(desc.idVendor == 0x1d6b && desc.idProduct == 0x2)
         {
             found = 1;
@@ -298,7 +296,7 @@ int main(void)
     
     for(i = 0; i < length; i++)
     {
-        e = libusb_bulk_transfer(handle,BULK_EP_OUT,my_string1,64,&received,0);  //64 : Max Packet Lenght
+        e = libusb_bulk_transfer(handle,BULK_EP_IN,my_string1,64,&received,0);  //64 : Max Packet Lenght
         if(e == 0)
         {
             printf("\nReceived: ");
