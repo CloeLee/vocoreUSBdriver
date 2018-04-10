@@ -16,8 +16,8 @@
 // #include </usr/include/libusb-1.0/libusb.h>
 
 // need to change after getting 'bEndpointAddress' value
-#define BULK_EP_OUT     0x00
-#define BULK_EP_IN      0x80
+#define BULK_EP_OUT     0x00 //??
+#define BULK_EP_IN      0x81
 
 int interface_ref = 0;
 int alt_interface,interface_number;
@@ -276,7 +276,7 @@ int main(void)
     // ************************TRANSFER************************
     //    e = libusb_bulk_transfer(
     //                             handle,        // libusb_device_handle *dev_handle
-    //                             BULK_EP_IN,    // unsigned char endpoint
+    //                             BULK_EP_OUT,    // unsigned char endpoint
     //                             my_string,     // unsigned char *data
     //                             length,        // int length
     //                             &transferred,  // int *actual_length
@@ -289,7 +289,7 @@ int main(void)
     //    }
     //    else
     //        printf("\nError in write! e = %d and transferred = %d\n",e,transferred);
-    //
+    
     //    sleep(3);
     
     i = 0;
