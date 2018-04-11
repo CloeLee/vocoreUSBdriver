@@ -255,7 +255,7 @@ int main(void)
     epdesc = active_config(dev_expected,hDevice_expected);
     
     //   Communicate
-    
+    printf("\n1");
     // unsigned char *my_string, 
     unsigned char *my_string1;
     // int transferred = 0;
@@ -265,9 +265,11 @@ int main(void)
     
     // my_string = (unsigned char *)malloc(nbytes + 1);
     my_string1 = (unsigned char *)malloc(nbytes + 1);
+    printf("\n2");
 
     // memset(my_string,'\0',64);
     memset(my_string1,'\0',64);
+    printf("\n3");
     
     // strcpy((char*)my_string,"prasad divesd");
     // length = strlen((char*)my_string);
@@ -298,6 +300,7 @@ int main(void)
     // for(i = 0; i < length; i++)
     for(i = 0; i < 1000; i++)
     {
+        printf("\n4");
         e = libusb_bulk_transfer(handle,BULK_EP_IN,my_string1,64,&received,0);  //64 : Max Packet Lenght
         if(e == 0)
         {
