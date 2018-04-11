@@ -256,8 +256,9 @@ int main(void)
     
     //   Communicate
     
-    unsigned char *my_string, *my_string1;
-    int transferred = 0;
+    // unsigned char *my_string, 
+    unsigned char *my_string1;
+    // int transferred = 0;
     int received = 0;
     int length = 0;
     int nbytes = 64; // 64bytes of data
@@ -294,7 +295,8 @@ int main(void)
     
     i = 0;
     
-    for(i = 0; i < length; i++)
+    // for(i = 0; i < length; i++)
+    for(i = 0; i < 1000; i++)
     {
         e = libusb_bulk_transfer(handle,BULK_EP_IN,my_string1,64,&received,0);  //64 : Max Packet Lenght
         if(e == 0)
