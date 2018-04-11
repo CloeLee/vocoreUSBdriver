@@ -268,7 +268,7 @@ int main(void)
     // memset(my_string,'\0',64);
     memset(my_string1,'\0',64);
     
-    strcpy((char*)my_string,"prasad divesd");
+    // strcpy((char*)my_string,"prasad divesd");
     // length = strlen((char*)my_string);
     
     // printf("\nTo be sent : %s",my_string);
