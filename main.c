@@ -257,7 +257,7 @@ int main(void)
     //   Communicate
     // unsigned char *my_string, 
     unsigned char *my_string1;
-    // int transferred = 0;
+    int transferred = 0;
     int received = 0;
     int length = 0;
     int nbytes = 64; // 64bytes of data
@@ -269,28 +269,28 @@ int main(void)
     memset(my_string1,'\0',64);
     
     // strcpy((char*)my_string,"prasad divesd");
-    // length = strlen((char*)my_string);
+    length = strlen("dummy");
     
     // printf("\nTo be sent : %s",my_string);
     
-    // ************************TRANSFER************************
-    //    e = libusb_bulk_transfer(
-    //                             handle,        // libusb_device_handle *dev_handle
-    //                             BULK_EP_OUT,    // unsigned char endpoint
-    //                             my_string,     // unsigned char *data
-    //                             length,        // int length
-    //                             &transferred,  // int *actual_length
-    //                             0              // unsigned int timeout
-    //                             );
-    //    if(e == 0 && transferred == length)
-    //    {
-    //        printf("\nWrite successful!");
-    //        printf("\nSent %d bytes with string: %s\n", transferred, my_string);
-    //    }
-    //    else
-    //        printf("\nError in write! e = %d and transferred = %d\n",e,transferred);
+    ************************TRANSFER************************
+       e = libusb_bulk_transfer(
+                                handle,        // libusb_device_handle *dev_handle
+                                BULK_EP_IN,    // unsigned char endpoint
+                                "dummy",     // unsigned char *data
+                                length,        // int length
+                                &transferred,  // int *actual_length
+                                0              // unsigned int timeout
+                                );
+       if(e == 0 && transferred == length)
+       {
+           printf("\nWrite successful!");
+           // printf("\nSent %d bytes with string: %s\n", transferred, my_string);
+       }
+       else
+           printf("\nError in write! e = %d and transferred = %d\n",e,transferred);
     
-    //    sleep(3);
+       sleep(3);
     
     i = 0;
     
